@@ -1,0 +1,249 @@
+/*ESTILOS PARA EL LAYOUT DE PUBLICACIONES IMAGENES*/
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Estilos de nuestro Grid Container*/
+.post-list{
+    display: grid;  /*Tipo de representacion en grids*/
+    grid-template-columns: repeat(3, minmax(100px, 293px)); /*Numero de columnas*/
+    justify-content: center; /*Alineacion de contenido*/
+    grid-gap: 28px; /*Espacio entre elementos*/   
+    margin-top: 50px; 
+}
+
+/*Estilo para todo el Grid Item*/
+.post{    
+    cursor: pointer;
+    position: relative;
+    display: block; /*Le asignamos esta propiedad ya que nuestra etiqueta <a> tiene por defecto {display:inline} . Y necesitamos que sea en bloque*/
+}
+
+/*Estilo para el contenedor que contiene la imagen*/
+.post-image{
+    margin: 0; /*Margen para que la imagen no tenga margenes por ningun lado*/
+}
+
+/*Estilo para la imagen*/
+.post-image img{
+    width: 100%; /*Propiedad para que la imagen ocupe todo el espacio del contenedor que la contiene*/
+    vertical-align: top; /*Margen para quitar la linea que queda abajo de la imagen*/
+    
+}
+
+/*Estilos para los elementos del overlay likes y comments*/
+.post-overlay{
+    background: rgba(0, 0, 0, .4); /*Color*/
+    position: absolute; /*Posiciones*/
+    left: 0; /*Izq*/
+    right: 0;  /*der*/
+    top: 0; /*arriba*/
+    bottom: 0; /*abajo*/
+    align-items: center;
+    justify-content: center;
+    display: none; /*Elementos por defecto desaparezcan*/
+    text-align: center; /*Alineacion del texto centro*/
+    color:white;    
+}
+
+.post:hover .post-overlay{
+    display: flex;
+}
+
+/*Estilos para nuestros likes y comments*/
+.post-likes,
+.post-comments{
+    width: 80px;
+    margin: 5px; /*Espacio entre enllos de 5px*/
+    font-weight: bold; /*Propiedad peso de fuente para que se vean en negrita*/
+    text-align: center; /*Propiedad para alinear los likes y comments*/
+    display: inline-block; /*Propiedad para que este uno al lado del otro, y para que el ancho funcione*/
+}
+
+/*Regla para que mi sitio sea responsive. Para que cuando este en pantallas inferiores a 768px el grid-gap sea de 3px*/
+@media screen and (max-width: 768px){
+    .post-list{
+        grid-gap: 3px;
+    }
+}
+
+/*ESTILOS PARA EL HEADER*/
+
+/*Asignando fuente a instagram*/
+#insta{
+    font-family: billabong;
+    font-size: 40px;
+}
+
+/*Contenedor */
+.navigation-container {
+    overflow: hidden;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+/*Grid padre*/
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    grid-template-rows: 77px;
+    grid-gap: 28px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Logo*/
+.logo {
+    font-size: 25px;
+    width: 100%;
+    color: rgba(0, 0, 0, .7);
+    font-weight: bold;
+}
+
+.logo span {
+    font-family: 'Pacifico', cursive;
+}
+
+/*Formulario*/
+.form {
+    position: relative;
+    display: grid;
+    justify-content: center;
+}
+
+/*Estilos cuadro de texto form*/
+.form input[type=text] {
+    text-align: center;
+    color: rgba(0, 0, 0, .2);
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    padding: 5px 28px;
+}
+
+/*Estilo icono fontawesome search*/
+.fas.fa-search {
+    font-size: 14px;
+    position: absolute;
+    top: 6px;
+    left: 105px;
+    color: rgba(0, 0, 0, .2);
+}
+
+/*Navbar Grid*/
+.navbar {
+    display: grid;
+    justify-content: end;
+}
+
+/*Estilo lista*/
+.navigation .navbar ul {
+    margin: 0;
+    display: inline;
+}
+
+/*Estilo contenedor navbar items lista*/
+.navigation .navbar ul li {
+    display: inline-block;
+    padding: 0 .8em;
+    font-size: 20px;
+}
+
+/*estilos items lista*/
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+/*Estilo iconos lista*/
+.navigation .navbar ul li a {
+    text-decoration: none;
+    color: #444;
+}
+
+/*ESTILOS PARA LA SECCION USER*/
+
+/*Grid padre*/
+.login {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: minmax(100px, 321px) minmax(200px, 614px);
+    justify-content: center;
+}
+
+/*Estilos para el contenedor info*/
+.info {
+    display: grid;
+    grid-template-rows: repeat(3, 40px);
+    align-content: center;
+    align-items: end;
+    grid-gap: 10px;
+}
+
+/*Estilos para los elementos de la clase perfil*/
+.perfil, .info{
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+/*Estilo para el elemento figure que contiene la imagen*/
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*Estilo para que la imagen sea redonda*/
+.img-perfil img {
+    margin-left: 20px;
+    width:200px;
+    height:200px;
+    border-radius:150px;
+}
+
+/*Tamaño de letra del nombre de usuario*/
+.user {
+    font-size: 26px;
+}
+
+/*Estilo para espacio entre nombre de usuario y boton*/
+.user span {
+    padding-right: 20px;
+}
+
+/*Estilos para el boton*/
+input[type="button"] {
+    background-color: #fafafa;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    padding: 8px 25px;
+    color: #444;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/*Estilo para espacio entre informacion*/
+.info span {
+    padding-right: 50px;
+}
+
+/*Cargando nuevas fuentes*/
+@font-face{
+    font-family: billabong;
+    src: url(../fonts/billabong.ttf)
+}
+
+
